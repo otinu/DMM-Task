@@ -1,15 +1,17 @@
 .box1 {
   width: 300px;
   height: 300px;
-  background-color: #ff0000;
+  background-color: #1bf54a;
   margin: 30px;
   padding: 30px;
+  margin-top: 200px;
+  margin-left: 400px;
 }
 
 .box2 {
   width: 100px;
   height: 100px;
-  background-color: blue;
+  background-color: rgb(236, 28, 191);
   /* 指定方法(box2の周囲すべてに枠線を設定する場合) */
   border: 5px solid yellow;
 }
