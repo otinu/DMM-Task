@@ -245,3 +245,19 @@ footer {
 .footer-text {
   color: #fff;
 }
+
+/* レスポンシブ対応
+-----------------------------*/
+
+@media screen and (max-width: 600px); {
+
+  html {
+    width: 100%;
+    
+  }
+
+
+
+
+
+}
