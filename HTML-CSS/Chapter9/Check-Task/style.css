@@ -1,0 +1,12 @@
+.position {
+  position: absolute;
+}
+
+.fab {
+  font-size: 32px;
+  position: relative;
+  display: inline-block;
+  left: 40px;
+  top: 100px;
+  color: #37d524;
+}
