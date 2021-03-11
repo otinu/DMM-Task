@@ -10,8 +10,13 @@ a {
   text-decoration: none;
 }
 
-header, nav, h2, .main-visual, footer {
-  font-family: Chalkduster, "Bradley Hand", fantasy, Courier, "Segoe Print", sans-serif;
+header,
+nav,
+h2,
+.main-visual,
+footer {
+  font-family: Chalkduster, "Bradley Hand", fantasy, Courier, "Segoe Print",
+    sans-serif;
 }
 /* header
 -----------------------------*/
@@ -44,8 +49,6 @@ header {
   right: 22px; /* .headerの右上から22px左側へ移動する */
 }
 
-
-
 /* メニュー */
 .nav-list {
   text-align: center;
@@ -65,7 +68,7 @@ header {
   width: 100%; /* 横幅いっぱい */
   height: 300px; /* 高さ300px */
   background-image: url(img/img/mv.jpg);
-  background-size: cover;　/* 縦横比を維持したまま背景領域を埋めつくす */
+  background-size: cover;
   background-position: center;
 }
 
@@ -83,7 +86,8 @@ header {
 
 .main-visual-name {
   margin-top: 30px; /* 上側の外側の余白 */
-  color: #fff; /: /* 文字色を白に変更 */
+  color: #fff;
+  /: ; /* 文字色を白に変更 */
 }
 
 /* main
@@ -133,7 +137,7 @@ main {
 
 .blog-date {
   font-size: 12px;
-  display: inline-block;  /* blog-dateとcategoryがどちらもinline-blockにすることで、要素が横並びになる */
+  display: inline-block; /* blog-dateとcategoryがどちらもinline-blockにすることで、要素が横並びになる */
 }
 
 .category {
@@ -248,16 +252,53 @@ footer {
 
 /* レスポンシブ対応
 -----------------------------*/
-
-@media screen and (max-width: 600px); {
-
-  html {
+@media screen and (max-width: 425px) {
+  header {
     width: 100%;
-    
+    margin: 0 120px;
   }
 
+  nav {
+    width: 100%;
+    margin: 0 120px;
+  }
 
+  div {
+    width: 100%;
+  }
 
+  main {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 30px;
+  }
 
+  .main-visual {
+    width: 150%;
+    margin: 0 50px;
+  }
 
+  section {
+    width: 100%;
+  }
+
+  footer {
+    width: 200%;
+  }
+
+  .social {
+    position: relative;
+    margin: 0 200px 0;
+  }
+
+  .social i {
+    color: rgb(35, 95, 207);
+  }
+
+  .sidebar {
+    width: 230px;
+    display: block;
+    margin: 50px 150px 0;
+  }
 }
