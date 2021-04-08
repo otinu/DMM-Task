@@ -1,9 +1,30 @@
-$('#tab-contents .tab[id != "tab1"]').hide();
+API_KEY = "aa11908254c90569045c1bd83c89f0a7";  //ダブルクォーテーションは不要？
 
-$('#tab-menu a').on('click', function(event) {
-  $("#tab-contents .tab").hide();                //ここで、全コンテンツは一旦hideされる
-  $("#tab-menu .active").removeClass("active"); //一番最初はtab1についていたactiveは削除される
-  $(this).addClass("active");                   //クリックされたタブにactiveクラスを与える
-  $($(this).attr("href")).show();               //1.attrでhref属性を取得する。例えば、#tab2
-  event.preventDefault();                         //2..show()により、要素(href属性)を表示する。tab-menuの#tab2の内容のため、tab-contentsのid=tab2の要素が表示される。
-});     //event.preventDefault()はaタグの機能を無効にするメソッド。
+$(function(){
+  $('#btn').on('click', function() {
+    // 入力された都市名でWebAPIに天気情報をリクエスト
+    $.ajax({
+      url: "http://api.openweathermap.org/data/2.5/weather?q=" + $('#cityname').val() + "&units=metric&appid=" + API_KEY,
+      dataType : 'jsonp',
+    }).done(function (data){
+      //通信成功
+      // 位置
+      $('#place').text(data.name);
+      // 最高気温
+      $('#temp_max').text(data.main.temp_max);
+      // 最低気温
+      $('#temp_min').text(data.main.temp_min);
+      //湿度
+      $('#humidity').text(data.main.humidity);
+      //風速
+      $('#speed').text(data.wind.speed);
+      // 天気
+      $('#weather').text(data.weather[0].main);
+      // 天気アイコン
+      $('img').attr("src","http://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
+      $('img').attr("alt",data.weather[0].main);
+    }).fail(function (data) {
+      //通信失敗
+      alert('通信に失敗しました。');      });
+  });
+});
