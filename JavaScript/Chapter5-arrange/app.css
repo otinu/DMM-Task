@@ -1,0 +1,19 @@
+.box1 {
+  display: none;
+  background-color: #ff0000;
+  height: 200px;
+  width: 200px;
+}
+
+.box2 {
+  display: none;
+  background-color: blue;
+  height: 200px;
+  width: 200px;
+}
+
+.box3 {
+  background-color: green;
+  height: 200px;
+  width: 200px;
+}
