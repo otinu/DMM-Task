@@ -1,9 +1,5 @@
-$(function (){
-  $('.box1').slideDown(10000,function (){
-    $('.box1').css({
-      'background-color': '#0000FF',
-      'width': '200px',
-      'height': '100px'
-    }).slideUp(10000);
+$(function(){
+  $("button").on("click", function(){
+    $("ul").children().css("color","red");
   });
 });
