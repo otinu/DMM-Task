@@ -23,7 +23,7 @@ h1 {
   position: fixed;
   right: 20px;
   top: 20px;
-  z-index: 10;
+  z-index: 10; /* コンテンツの配置をZ形にするプロパティ。イメージ湧かない場合は要検索 */
 }
 .menu-trigger,
 .menu-trigger span {
@@ -44,6 +44,8 @@ h1 {
   background-color: #000;
   border-radius: 4px;
 }
+
+/* クリック前のハンバーガーメニューの三本線の間隔を調整 */
 .menu-trigger span:nth-child(1) {
   top: 0;
 }
@@ -53,19 +55,28 @@ h1 {
 .menu-trigger span:nth-child(3) {
   bottom: 0;
 }
+
+/* クリックしたとき、一本目の線はY軸に+20px上がって、-45度下に傾く */
+/* 傾いたら、線の色は黒から白になる(指定はbackground-color */
 .menu-trigger.active span:nth-child(1) {
   -webkit-transform: translateY(20px) rotate(-45deg);
   transform: translateY(20px) rotate(-45deg);
   background-color: #fff;
 }
+
+/* クリックしたとき、2本目の線は同じ位置のまま動かずに消える */
 .menu-trigger.active span:nth-child(2) {
   opacity: 0;
 }
+
+/* クリックしたとき、3本目の線は下に-20px下がって、+45度上に傾く */
+/* 傾いたら、線の色は黒から白になる(指定はbackground-color */
 .menu-trigger.active span:nth-child(3) {
-  -webkit-transform: translateY(-20px) rotate(45deg);
+  -webkit-transform: translateY(-20px) rotate(45deg); /* CSSの場合、transformプロパティは正規のプロパティである様子。-webkitとは何か現状は不明 */
   transform: translateY(-20px) rotate(45deg);
   background-color: #fff;
 }
+
 /* ------------------------ */
 /* ------ spメニュー ------ */
 /* ------------------------ */
